@@ -13,6 +13,10 @@
     <link rel="icon" href="https://sdgindiaindex.socialcops.com/_nuxt/icons/icon_64.96fQ$0Gf7Ef.png"
         type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
     <title>SDGs 4 India | SocialCops</title>
 </head>
 
@@ -59,39 +63,226 @@
     </div>
 
     <div class="container mt-4">
-        <div class="form-group col-md-12">
-            <label for="inputState">Select Goal</label>
-            <select id="inputState" class="form-control">
-                <option selected>SDG India Index</option>
-                <option>Goal 1 : No Poverty </option>option>
-                <option>Goal 2 : No Poverty </option>option>
-                <option>Goal 3 : No Poverty </option>option>
-                <option>Goal 4 : No Poverty </option>option>
-                <option>Goal 5 : No Poverty </option>option>
-                <option>Goal 6 : No Poverty </option>option>
-                <option>Goal 7 : No Poverty </option>option>
-                <option>Goal 8 : No Poverty </option>option>
-                <option>Goal 9 : No Poverty </option>option>
-                <option>Goal 10 : No Poverty </option>option>
-                <option>Goal 11 : No Poverty </option>option>
-                <option>Goal 12 : No Poverty </option>option>
-                <option>Goal 13 : No Poverty </option>option>
-                <option>Goal 14 : No Poverty </option>option>
-                <option>Goal 15 : No Poverty </option>option>
-                <option>Goal 16 : No Poverty </option>option>
-            </select>
+        <div class="row">
+            <div class="form-group col-md-12">
+                <label for="inputState">Select Goal</label>
+                <select id="inputState" class="form-control">
+                    <option selected>SDG India Index</option>
+                    <option>Goal 1 : No Poverty </option>option>
+                    <option>Goal 2 : Zero Hunger </option>option>
+                    <option>Goal 3 : Good Healt & Well Being </option>option>
+                    <option>Goal 4 : Quality Educaation </option>option>
+                    <option>Goal 5 : Gender Equality </option>option>
+                    <option>Goal 6 : No Poverty </option>option>
+                    <option>Goal 7 : No Poverty </option>option>
+                    <option>Goal 8 : No Poverty </option>option>
+                    <option>Goal 9 : No Poverty </option>option>
+                    <option>Goal 10 : No Poverty </option>option>
+                    <option>Goal 11 : No Poverty </option>option>
+                    <option>Goal 12 : No Poverty </option>option>
+                    <option>Goal 13 : No Poverty </option>option>
+                    <option>Goal 14 : No Poverty </option>option>
+                    <option>Goal 15 : No Poverty </option>option>
+                    <option>Goal 16 : No Poverty </option>option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        This is some text within a card body.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title"><b>Performance category</b></p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title"><b>State Rank</b></p>
+
+                        <canvas id="myChart"></canvas>
+                        <script>
+                            var ctx = document.getElementById('myChart').getContext('2d');
+                            var chart = new Chart(ctx, {
+                                // The type of chart we want to create
+                                type: 'horizontalBar',
+
+                                // The data for our dataset
+                                data: {
+                                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                                    datasets: [{
+                                        label: 'My First dataset',
+                                        backgroundColor: 'rgb(255, 99, 132)',
+                                        borderColor: 'rgb(255, 99, 132)',
+                                        data: [0, 10, 5, 2, 20, 30, 45]
+                                    }]
+                                },
+
+                                // Configuration options go here
+                                options: {
+                                    legend: {
+                                        display: false
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title"><b>UT Rank</b></p>
+
+
+                        <canvas id="ut-rank"></canvas>
+                        <script>
+                            var ctx = document.getElementById('ut-rank').getContext('2d');
+                            var chart = new Chart(ctx, {
+                                // The type of chart we want to create
+                                type: 'horizontalBar',
+
+                                // The data for our dataset
+                                data: {
+                                    labels: ['CH', 'PY', 'DD', 'LD', 'DL', 'AN', 'DH'],
+                                    datasets: [{
+                                        label: 'My First dataset',
+                                        backgroundColor: 'rgb(255, 99, 132)',
+                                        borderColor: 'rgb(255, 99, 132)',
+                                        data: [15, 10, 5, 2, 20, 30, 45]
+                                    }]
+                                },
+
+                                // Configuration options go here
+                                options: {
+                                    legend: {
+                                        display: false
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body text-center p-1">
+                        <b>Technical Details</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body ">
+                        <p class="card-title"><b>Indicator List</b></p>
+                        <button class="btn btn-secondary mb-2">Download Data</button>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Methodology
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p>For explanatory note on target values, <a
+                                        href="https://s3.ap-south-1.amazonaws.com/visualize-v1-dev/Target_Note.pdf"
+                                        target="_blank">
+                                        Click Here</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
 
-
-
-
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
