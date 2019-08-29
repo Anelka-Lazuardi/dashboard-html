@@ -1,0 +1,74 @@
+span {
+    display: block;
+    width: 6.25%;
+    float: left;
+    height: 4px;
+}
+
+.line {
+    width: 100%;
+}
+
+.color-1 {
+    background: #E44B3A;
+}
+
+.color-2 {
+    background: #DDA63A;
+}
+
+.color-3 {
+    background: #5A9F38;
+}
+
+.color-4 {
+    background: #C7402C;
+}
+
+.color-5 {
+    background: #E4491B;
+}
+
+.color-6 {
+    background: #C9CDD1;
+}
+
+.color-7 {
+    background: #5FBEE2;
+}
+
+.color-8 {
+    background: #A43741;
+}
+
+.color-9 {
+    background: #E66322;
+}
+
+.color-10 {
+    background: #E05067;
+}
+
+.color-11 {
+    background: #EE9B22;
+}
+
+.color-12 {
+    background: #457E44;
+}
+
+.color-13 {
+    background: #4398D9;
+}
+
+.color-14 {
+    background: #6FC12C;
+}
+
+.color-15 {
+    background: #2B699D;
+}
+
+.color-16 {
+    background: #1C486A;
+}
